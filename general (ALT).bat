@@ -2,12 +2,37 @@
 chcp 65001 > nul
 :: 65001 - UTF-8
 
+set "LOCAL_VERSION=1.0"
+set "GITHUB_REPO=https://github.com/LxTeams/zapret-lxteam"
+set "GITHUB_RAW_VERSION=https://raw.githubusercontent.com/LxTeams/zapret-lxteam/main/version.txt"
+
 echo ========================================
-echo        LxTeam Zapret v1.0
-echo        GitHub: https://github.com/LxTeams/zapret-lxteam
+echo        LxTeam Zapret v%LOCAL_VERSION%
+echo        GitHub: %GITHUB_REPO%
 echo ========================================
 echo.
 
+:: Проверка обновлений
+set "GITHUB_VERSION="
+for /f "delims=" %%a in ('powershell -Command "try { (Invoke-WebRequest -Uri '%GITHUB_RAW_VERSION%' -UseBasicParsing -TimeoutSec 3).Content.Trim() } catch { '' }" 2^>nul') do set "GITHUB_VERSION=%%a"
+
+if defined GITHUB_VERSION (
+    if not "%LOCAL_VERSION%"=="%GITHUB_VERSION%" (
+        echo.
+        echo ====== UPDATE AVAILABLE ======
+        echo Current version: %LOCAL_VERSION%
+        echo Latest version: %GITHUB_VERSION%
+        echo.
+        set /p "update_choice=Open GitHub to download? (Y/N): "
+        if /i "!update_choice!"=="Y" start "" "%GITHUB_REPO%"
+        if /i "!update_choice!"=="Yes" start "" "%GITHUB_REPO%"
+        echo.
+    )
+) else (
+    echo [Could not check for updates]
+)
+
+echo.
 cd /d "%~dp0"
 
 :: ПОЛНОСТЬЮ УБИРАЕМ ВСЕ ВЫЗОВЫ service.bat
