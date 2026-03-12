@@ -10,7 +10,7 @@ set "GITHUB_RAW_VERSION=https://raw.githubusercontent.com/LxTeams/zapret-lxteam/
 :: GitHub: https://github.com/LxTeams/zapret-lxteam
 :: ============================================
 
-:: Проверяем, что это прямой запуск service.bat, а не вызов из другого батника
+
 if "%~1"=="" (
     echo ========================================
     echo        %TEAM_NAME% Zapret Service v%LOCAL_VERSION%
@@ -825,3 +825,4 @@ if "%extracted%"=="0" (
     exit
 )
 exit /b 0
+
