@@ -35,12 +35,12 @@ if defined GITHUB_VERSION (
 echo.
 cd /d "%~dp0"
 
-:: ПОЛНОСТЬЮ УБИРАЕМ ВСЕ ВЫЗОВЫ service.bat
+
 :: call service.bat status_zapret
 :: call service.bat check_updates
 :: call service.bat load_game_filter
 
-:: Задаём GameFilter если не задан (важно!)
+
 if "%GameFilter%"=="" set "GameFilter=12"
 
 set "BIN=%~dp0bin\"
@@ -61,3 +61,4 @@ echo.
 echo Zapret запущен в фоновом режиме
 echo.
 pause
+
