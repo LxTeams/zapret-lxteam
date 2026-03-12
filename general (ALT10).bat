@@ -36,7 +36,7 @@ if defined GITHUB_VERSION (
 cd /d "%~dp0"
 echo:
 
-:: Задаём GameFilter если не задан
+
 if "%GameFilter%"=="" set "GameFilter=12"
 
 set "BIN=%~dp0bin\"
@@ -57,3 +57,4 @@ echo.
 echo Zapret запущен в фоновом режиме
 echo.
 pause
+
