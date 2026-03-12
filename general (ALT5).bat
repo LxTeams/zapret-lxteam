@@ -40,7 +40,7 @@ rem call service.bat check_updates
 rem call service.bat load_game_filter
 echo:
 
-:: Задаём GameFilter если не задан
+
 if "%GameFilter%"=="" set "GameFilter=12"
 
 set "BIN=%~dp0bin\"
@@ -59,3 +59,4 @@ echo Zapret запущен в фоновом режиме
 echo.
 
 pause
+
