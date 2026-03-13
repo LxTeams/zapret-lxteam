@@ -4,7 +4,7 @@ chcp 65001 > nul
 :: NOT RECOMMENDED
 setlocal EnableDelayedExpansion
 
-set "LOCAL_VERSION=1.0"
+set "LOCAL_VERSION=1.1"
 set "GITHUB_REPO=https://github.com/LxTeams/zapret-lxteam"
 set "GITHUB_RAW_VERSION=https://raw.githubusercontent.com/LxTeams/zapret-lxteam/main/version.txt"
 
@@ -59,4 +59,5 @@ echo Zapret запущен в фоновом режиме
 echo.
 
 pause
+
 
