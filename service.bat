@@ -1,6 +1,6 @@
 @echo off
 chcp 1251 > nul
-set "LOCAL_VERSION=1.0"
+set "LOCAL_VERSION=1.1"
 set "TEAM_NAME=LxTeam"
 set "GITHUB_REPO=https://github.com/LxTeams/zapret-lxteam"
 set "GITHUB_RAW_VERSION=https://raw.githubusercontent.com/LxTeams/zapret-lxteam/main/version.txt"
@@ -825,4 +825,5 @@ if "%extracted%"=="0" (
     exit
 )
 exit /b 0
+
 
